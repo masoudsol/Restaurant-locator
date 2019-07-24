@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="vocera.myapplication.MainActivity">
+    <item
+        android:id="@+id/sort"
+        android:title="@string/sort"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/sort_alpha"
+        android:title="@string/sort_alphabetic"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/sort_distance"
+        android:title="@string/sort_distance"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/sort_rating"
+        android:title="@string/sort_rating"
+        app:showAsAction="never" />
+</menu>

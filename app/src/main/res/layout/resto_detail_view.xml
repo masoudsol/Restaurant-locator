@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/detail_imageview_height"
+        android:id="@+id/imageviewdetail"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/star_rating" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nametextviewdetail"
+        android:textSize="@dimen/detail_header"
+        android:textStyle="bold"
+        style="@style/detailview_text"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imageviewdetail"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresstextviewdetail"
+        style="@style/detailview_text"
+        android:layout_below="@id/nametextviewdetail"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/star_rating"
+        android:layout_below="@id/addresstextviewdetail"
+        style="@style/detailview_text"
+        android:id="@+id/textviewstardetail"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detailview_text"
+        android:text="@string/dollar_category"
+        android:layout_below="@id/textviewstardetail"
+        android:id="@+id/textviewdollardetail"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detailview_text"
+        android:text="@string/distance"
+        android:layout_below="@id/textviewdollardetail"
+        android:id="@+id/textviewdistancedetail"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detailview_text"
+        android:text="@string/closed"
+        android:layout_below="@id/textviewdistancedetail"
+        android:id="@+id/closed"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detailview_text"
+        android:layout_below="@id/closed"
+        android:id="@+id/transaction"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detailview_text"
+        android:layout_below="@id/transaction"
+        android:id="@+id/phone"/>
+</RelativeLayout>

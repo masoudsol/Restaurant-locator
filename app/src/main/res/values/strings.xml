@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Restaurant Locator</string>
+    <string name="splash_desc">This sample app uses your geolocation to retrieve the 10 closest restaurants from Yelp API. This is an excerise of MVVM Design pattern and architecture!</string>
+    <string name="tutorial_desc">You may swipe down at any moment to refresh the page. You are able to sort by name, distance or rating by selecting the menu button at the top right corner. Selecting any of the restaurants will take you to a detail page!</string>
+    <string name="continuee">continue</string>
+    <string name="star_rating">%s star from %s reviews</string>
+    <string name="dollar_category">%s . </string>
+    <string name="distance">Distance %.02fkm</string>
+    <string name="oops">Something went wrong!</string>
+    <string name="ok">OK</string>
+    <string name="we_need">We need your location in order to find the closest restaurants!</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="sort">Sort</string>
+    <string name="sort_alphabetic">Sort By Name</string>
+    <string name="sort_distance">Sort By Distance</string>
+    <string name="sort_rating">Sort By Rating</string>
+    <string name="closed">Closed</string>
+    <string name="open">Open</string>
+</resources>

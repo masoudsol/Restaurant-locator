@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_height"
+        android:elevation="@dimen/cardview_elevation"
+        app:cardCornerRadius="@dimen/cardview_corner"
+        android:layout_margin="@dimen/carview_padding">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/cardview_imageview_height"
+                android:id="@+id/imageview"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/star_rating" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nametextview"
+                android:textSize="@dimen/header"
+                android:textStyle="bold"
+                style="@style/carview_text"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imageview"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addresstextview"
+                style="@style/carview_text"
+                android:layout_below="@id/nametextview"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/star_rating"
+                android:layout_below="@id/addresstextview"
+                style="@style/carview_text"
+                android:id="@+id/textviewstar"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/carview_text"
+                android:text="@string/dollar_category"
+                android:layout_below="@id/textviewstar"
+                android:id="@+id/textviewdollar"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/carview_text"
+                android:text="@string/distance"
+                android:layout_below="@id/textviewdollar"
+                android:id="@+id/textviewdistance"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
