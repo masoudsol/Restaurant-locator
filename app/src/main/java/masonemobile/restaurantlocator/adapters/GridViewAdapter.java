@@ -35,12 +35,12 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return restaurantModel==null?0:restaurantModel.getBusinesses().size();
+        return restaurantModel==null?0:restaurantModel.businesses.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return restaurantModel.getBusinesses().get(i);
+        return restaurantModel.businesses.get(i);
     }
 
     @Override
@@ -57,29 +57,29 @@ public class GridViewAdapter extends BaseAdapter {
             gridView = ((LayoutInflater) Objects.requireNonNull(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))).inflate(R.layout.custom_grid_cell,null);
         }
 
-        RestaurantModel.Business business = restaurantModel.getBusinesses().get(i);
+        RestaurantModel.Business business = restaurantModel.businesses.get(i);
 
         ImageView ivBasicImage = gridView.findViewById(R.id.imageview);
-        Picasso.with(context).load(business.getImage_url()).into(ivBasicImage);
+        Picasso.with(context).load(business.image_url).into(ivBasicImage);
 
-        String star_rating = String.format(context.getString(R.string.star_rating),"<font color=\'#303F9F\'>"+business.getRating()+"</font>", "<font color=\'#303F9F\'>"+business.getReview_count()+"</font>");
+        String star_rating = String.format(context.getString(R.string.star_rating),"<font color=\'#303F9F\'>"+business.rating+"</font>", "<font color=\'#303F9F\'>"+business.review_count+"</font>");
         ((TextView)gridView.findViewById(R.id.textviewstar)).setText(Html.fromHtml(star_rating,0));
 
-        String dollar = String.format(context.getString(R.string.dollar_category),"<font color=\'#008304\'>"+(business.getPrice()==null?"N/A":business.getPrice())+"</font>");
-        dollar = Utilities.getInstance().stringArrayToStringCategory(dollar,business.getCategories()," - ");
+        String dollar = String.format(context.getString(R.string.dollar_category),"<font color=\'#008304\'>"+(business.price==null?"N/A":business.price)+"</font>");
+        dollar = Utilities.getInstance().stringArrayToStringCategory(dollar,business.categories," - ");
         Spanned dollarSpanned = Html.fromHtml(dollar,0);
         ((TextView)gridView.findViewById(R.id.textviewdollar)).setText(dollarSpanned);
 
-        ((TextView)gridView.findViewById(R.id.nametextview)).setText(business.getName());
+        ((TextView)gridView.findViewById(R.id.nametextview)).setText(business.name);
 
-        ((TextView)gridView.findViewById(R.id.addresstextview)).setText(buildAddress(business.getLocation()));
+        ((TextView)gridView.findViewById(R.id.addresstextview)).setText(buildAddress(business.location));
 
-        ((TextView)gridView.findViewById(R.id.textviewdistance)).setText(String.format(context.getString(R.string.distance),business.getDistance()/1000));
+        ((TextView)gridView.findViewById(R.id.textviewdistance)).setText(String.format(context.getString(R.string.distance),business.distance/1000));
 
         return gridView;
     }
 
     private String buildAddress(RestaurantModel.Business.Location location){
-        return location.getAddress1()+" "+location.getAddress2();
+        return location.address1+" "+location.address2;
     }
 }

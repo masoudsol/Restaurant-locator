@@ -4,277 +4,45 @@ import java.io.Serializable;
 import java.util.List;
 
 public class RestaurantModel implements Serializable{
-    private List<Business> businesses;
-
-    public List<Business> getBusinesses() {
-        return businesses;
-    }
-
-    public void setBusinesses(List<Business> businesses) {
-        this.businesses = businesses;
-    }
+    public List<Business> businesses;
 
     public class Business implements Serializable{
-        private String id;
-        private String alias;
-        private String name;
-        private String image_url;
-        private boolean is_closed;
-        private String url;
-        private int review_count;
-        private List<Category> categories;
-        private float rating;
-        private Coordinates coordinates;
-        private List<String> transactions;
-        private String price;
-        private Location location;
-        private String phone;
-        private String display_phone;
-        private float distance;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getAlias() {
-            return alias;
-        }
-
-        public void setAlias(String alias) {
-            this.alias = alias;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getImage_url() {
-            return image_url;
-        }
-
-        public void setImage_url(String image_url) {
-            this.image_url = image_url;
-        }
-
-        public boolean isIs_closed() {
-            return is_closed;
-        }
-
-        public void setIs_closed(boolean is_closed) {
-            this.is_closed = is_closed;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
-        public int getReview_count() {
-            return review_count;
-        }
-
-        public void setReview_count(int review_count) {
-            this.review_count = review_count;
-        }
-
-        public List<Category> getCategories() {
-            return categories;
-        }
-
-        public void setCategories(List<Category> categories) {
-            this.categories = categories;
-        }
-
-        public float getRating() {
-            return rating;
-        }
-
-        public void setRating(float rating) {
-            this.rating = rating;
-        }
-
-        public Coordinates getCoordinates() {
-            return coordinates;
-        }
-
-        public void setCoordinates(Coordinates coordinates) {
-            this.coordinates = coordinates;
-        }
-
-        public List<String> getTransactions() {
-            return transactions;
-        }
-
-        public void setTransactions(List<String> transactions) {
-            this.transactions = transactions;
-        }
-
-        public String getPrice() {
-            return price;
-        }
-
-        public void setPrice(String price) {
-            this.price = price;
-        }
-
-        public Location getLocation() {
-            return location;
-        }
-
-        public void setLocation(Location location) {
-            this.location = location;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
-
-        public void setPhone(String phone) {
-            this.phone = phone;
-        }
-
-        public String getDisplay_phone() {
-            return display_phone;
-        }
-
-        public void setDisplay_phone(String display_phone) {
-            this.display_phone = display_phone;
-        }
-
-        public float getDistance() {
-            return distance;
-        }
-
-        public void setDistance(float distance) {
-            this.distance = distance;
-        }
+        public String id;
+        public String alias;
+        public String name;
+        public String image_url;
+        public boolean is_closed;
+        public String url;
+        public int review_count;
+        public List<Category> categories;
+        public  float rating;
+        public Coordinates coordinates;
+        public List<String> transactions;
+        public String price;
+        public Location location;
+        public  String phone;
+        public String display_phone;
+        public float distance;
 
         public class Category implements Serializable{
-            private String alias;
-            private String title;
-
-            public String getAlias() {
-                return alias;
-            }
-
-            public void setAlias(String alias) {
-                this.alias = alias;
-            }
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
-            }
+            public String alias;
+            public String title;
         }
 
         public class Coordinates implements Serializable{
-            private String latitude;
-            private String longitude;
-
-            public String getLatitude() {
-                return latitude;
-            }
-
-            public void setLatitude(String latitude) {
-                this.latitude = latitude;
-            }
-
-            public String getLongitude() {
-                return longitude;
-            }
-
-            public void setLongitude(String longitude) {
-                this.longitude = longitude;
-            }
+            public String latitude;
+            public String longitude;
         }
 
         public class Location implements Serializable{
-            private String address1;
-            private String address2;
-            private String address3;
-            private String city;
-            private String zip_code;
-            private String country;
-            private String state;
-            private List<String> display_address;
-
-            public String getAddress1() {
-                return address1;
-            }
-
-            public void setAddress1(String address1) {
-                this.address1 = address1;
-            }
-
-            public String getAddress2() {
-                return address2;
-            }
-
-            public void setAddress2(String address2) {
-                this.address2 = address2;
-            }
-
-            public String getAddress3() {
-                return address3;
-            }
-
-            public void setAddress3(String address3) {
-                this.address3 = address3;
-            }
-
-            public String getCity() {
-                return city;
-            }
-
-            public void setCity(String city) {
-                this.city = city;
-            }
-
-            public String getZip_code() {
-                return zip_code;
-            }
-
-            public void setZip_code(String zip_code) {
-                this.zip_code = zip_code;
-            }
-
-            public String getCountry() {
-                return country;
-            }
-
-            public void setCountry(String country) {
-                this.country = country;
-            }
-
-            public String getState() {
-                return state;
-            }
-
-            public void setState(String state) {
-                this.state = state;
-            }
-
-            public List<String> getDisplay_address() {
-                return display_address;
-            }
-
-            public void setDisplay_address(List<String> display_address) {
-                this.display_address = display_address;
-            }
+            public String address1;
+            public String address2;
+            public String address3;
+            public String city;
+            public String zip_code;
+            public String country;
+            public String state;
+            public List<String> display_address;
         }
     }
 }

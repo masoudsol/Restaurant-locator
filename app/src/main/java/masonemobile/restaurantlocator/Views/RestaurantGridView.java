@@ -124,7 +124,7 @@ public class RestaurantGridView extends AppCompatActivity implements ActivityCom
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(RestaurantGridView.this, RestaurantDetailView.class);
-                intent.putExtra(Utilities.getInstance().BUNDLEID, restaurantModel.getBusinesses().get(i));
+                intent.putExtra(Utilities.getInstance().BUNDLEID, restaurantModel.businesses.get(i));
                 startActivity(intent);
 
             }
@@ -166,15 +166,15 @@ public class RestaurantGridView extends AppCompatActivity implements ActivityCom
     public boolean onOptionsItemSelected(MenuItem item) {
         final int id = item.getItemId();
 
-        Collections.sort(restaurantModel.getBusinesses(), new Comparator<RestaurantModel.Business>(){
+        Collections.sort(restaurantModel.businesses, new Comparator<RestaurantModel.Business>(){
             @Override
             public int compare(RestaurantModel.Business businessModel, RestaurantModel.Business b1) {
                 if (id == R.id.sort_alpha) {
-                    return businessModel.getName().compareToIgnoreCase(b1.getName()); // To compare string values
+                    return businessModel.name.compareToIgnoreCase(b1.name); // To compare string values
                 } else if (id == R.id.sort_distance){
-                    return Float.compare(businessModel.getDistance(), b1.getDistance()); // To compare integer values
+                    return Float.compare(businessModel.distance, b1.distance); // To compare integer values
                 } else if (id == R.id.sort_rating){
-                    return Float.compare(b1.getRating(), businessModel.getRating()); // To compare integer values
+                    return Float.compare(b1.rating, businessModel.rating); // To compare integer values
                 }
                 return 0;
             }

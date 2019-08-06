@@ -25,29 +25,29 @@ public class RestaurantDetailView extends AppCompatActivity {
         business = (RestaurantModel.Business) getIntent().getSerializableExtra(Utilities.getInstance().BUNDLEID);
 
         ImageView ivBasicImage = findViewById(R.id.imageviewdetail);
-        Picasso.with(this).load(business.getImage_url()).into(ivBasicImage);
+        Picasso.with(this).load(business.image_url).into(ivBasicImage);
 
-        String star_rating = String.format(getString(R.string.star_rating),"<font color=\'#3F51B5\'>"+business.getRating()+"</font>", "<font color=\'#3F51B5\'>"+business.getReview_count()+"</font>");
+        String star_rating = String.format(getString(R.string.star_rating),"<font color=\'#3F51B5\'>"+business.rating+"</font>", "<font color=\'#3F51B5\'>"+business.review_count+"</font>");
         ((TextView)findViewById(R.id.textviewstardetail)).setText(Html.fromHtml(star_rating,0));
 
-        String dollar = String.format(getString(R.string.dollar_category),"<font color=\'#008304\'>"+(business.getPrice()==null?"N/A":business.getPrice())+"</font>");
-        dollar = Utilities.getInstance().stringArrayToStringCategory(dollar,business.getCategories()," - ");
+        String dollar = String.format(getString(R.string.dollar_category),"<font color=\'#008304\'>"+(business.price==null?"N/A":business.price)+"</font>");
+        dollar = Utilities.getInstance().stringArrayToStringCategory(dollar,business.categories," - ");
         Spanned dollarSpanned = Html.fromHtml(dollar,0);
         ((TextView)findViewById(R.id.textviewdollardetail)).setText(dollarSpanned);
 
-        ((TextView)findViewById(R.id.nametextviewdetail)).setText(business.getName());
+        ((TextView)findViewById(R.id.nametextviewdetail)).setText(business.name);
 
-        String address = Utilities.getInstance().stringArrayToString("",business.getLocation().getDisplay_address(),", ");
+        String address = Utilities.getInstance().stringArrayToString("",business.location.display_address,", ");
         ((TextView)findViewById(R.id.addresstextviewdetail)).setText(address);
 
-        ((TextView)findViewById(R.id.textviewdistancedetail)).setText(String.format(getString(R.string.distance),business.getDistance()/1000));
+        ((TextView)findViewById(R.id.textviewdistancedetail)).setText(String.format(getString(R.string.distance),business.distance/1000));
 
-        ((TextView)findViewById(R.id.closed)).setText(business.isIs_closed()?getString(R.string.closed):getString(R.string.open));
+        ((TextView)findViewById(R.id.closed)).setText(business.is_closed?getString(R.string.closed):getString(R.string.open));
 
-        String transaction = Utilities.getInstance().stringArrayToString("",business.getTransactions(),", ");
+        String transaction = Utilities.getInstance().stringArrayToString("",business.transactions,", ");
         ((TextView)findViewById(R.id.transaction)).setText(transaction);
 
-        ((TextView)findViewById(R.id.phone)).setText(business.getDisplay_phone());
+        ((TextView)findViewById(R.id.phone)).setText(business.display_phone);
 
     }
 }
