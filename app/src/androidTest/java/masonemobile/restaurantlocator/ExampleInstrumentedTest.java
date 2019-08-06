@@ -88,7 +88,7 @@ public class ExampleInstrumentedTest {
             public void onChanged(@Nullable RestaurantModel restaurantModel) {
                 assertNotEquals(null, restaurantModel);
                 if (restaurantModel != null) {
-                    assertEquals(BuildConfig.resto_count, restaurantModel.getBusinesses().size());
+                    assertEquals(BuildConfig.resto_count, restaurantModel.businesses.size());
                 }
             }
         });
