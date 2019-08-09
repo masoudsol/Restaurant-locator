@@ -16,16 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Views.IntroActivity">
+        <activity android:name=".modules.views.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.RestaurantGridView"/>
-        <activity android:name=".Views.RestaurantDetailView"/>
-        <activity android:name=".Views.TutorialActivity"/>
+        <activity android:name=".modules.views.RestaurantGridView"/>
+        <activity android:name=".modules.views.RestaurantDetailView"/>
 
     </application>
 

@@ -14,9 +14,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import masonemobile.restaurantlocator.Models.RestaurantModel;
-import masonemobile.restaurantlocator.ViewModels.RestaurantViewModel;
-import masonemobile.restaurantlocator.Views.RestaurantGridView;
+import masonemobile.restaurantlocator.modules.models.RestaurantModel;
+import masonemobile.restaurantlocator.modules.viewmodels.RestaurantViewModel;
+import masonemobile.restaurantlocator.modules.views.RestaurantGridView;
 
 import static android.content.Context.LOCATION_SERVICE;
 import static org.junit.Assert.*;

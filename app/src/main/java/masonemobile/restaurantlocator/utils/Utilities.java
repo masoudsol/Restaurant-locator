@@ -1,4 +1,4 @@
-package masonemobile.restaurantlocator.Utils;
+package masonemobile.restaurantlocator.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -6,14 +6,12 @@ import android.support.v7.app.AlertDialog;
 
 import java.util.List;
 
-import masonemobile.restaurantlocator.Models.RestaurantModel;
+import masonemobile.restaurantlocator.modules.models.Category;
 import masonemobile.restaurantlocator.R;
 
 public class Utilities {
 
     private static volatile Utilities sSoleInstance = new Utilities();
-
-    public String BUNDLEID = "REST_BUNDLE_ID";
 
     //private constructor.
     private Utilities(){}
@@ -54,7 +52,7 @@ public class Utilities {
         return stringBuilder.toString();
     }
 
-    public String stringArrayToStringCategory(String initail, List<RestaurantModel.Business.Category> list, String seperator){
+    public String stringArrayToStringCategory(String initail, List<Category> list, String seperator){
         StringBuilder stringBuilder = new StringBuilder(initail);
         for (int index = 0; index<list.size();index++)  {
             stringBuilder.append(list.get(index).title);

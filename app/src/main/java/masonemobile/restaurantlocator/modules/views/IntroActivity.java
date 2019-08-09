@@ -1,4 +1,4 @@
-package masonemobile.restaurantlocator.Views;
+package masonemobile.restaurantlocator.modules.views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +17,7 @@ public class IntroActivity extends AppCompatActivity {
         findViewById(R.id.continuebutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(IntroActivity.this, TutorialActivity.class));
+                startActivity(new Intent(IntroActivity.this, RestaurantGridView.class));
             }
         });
     }

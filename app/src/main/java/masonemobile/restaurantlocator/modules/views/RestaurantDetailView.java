@@ -1,4 +1,4 @@
-package masonemobile.restaurantlocator.Views;
+package masonemobile.restaurantlocator.modules.views;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,19 +10,23 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import masonemobile.restaurantlocator.Models.RestaurantModel;
+import masonemobile.restaurantlocator.modules.models.Business;
 import masonemobile.restaurantlocator.R;
-import masonemobile.restaurantlocator.Utils.Utilities;
+import masonemobile.restaurantlocator.modules.viewmodels.DetailViewModel;
+import masonemobile.restaurantlocator.utils.Utilities;
 
 public class RestaurantDetailView extends AppCompatActivity {
-    RestaurantModel.Business business;
+    Business business;
+    DetailViewModel detailViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resto_detail_view);
 
-        business = (RestaurantModel.Business) getIntent().getSerializableExtra(Utilities.getInstance().BUNDLEID);
+        detailViewModel = new DetailViewModel();
+
+        business = detailViewModel.getBusinuess();
 
         ImageView ivBasicImage = findViewById(R.id.imageviewdetail);
         Picasso.with(this).load(business.image_url).into(ivBasicImage);

@@ -1,4 +1,4 @@
-package masonemobile.restaurantlocator.adapters;
+package masonemobile.restaurantlocator.modules.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,34 +13,36 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
 import java.util.Objects;
 
-import masonemobile.restaurantlocator.Models.RestaurantModel;
+import masonemobile.restaurantlocator.modules.models.Business;
+import masonemobile.restaurantlocator.modules.models.Location;
 import masonemobile.restaurantlocator.R;
-import masonemobile.restaurantlocator.Utils.Utilities;
+import masonemobile.restaurantlocator.utils.Utilities;
 
 public class GridViewAdapter extends BaseAdapter {
 
     private Context context;
 
-    private RestaurantModel restaurantModel;
+    private List<Business> businesses;
 
     public GridViewAdapter(final Context context) {
         this.context = context;
     }
 
-    public void setRestaurantModel(RestaurantModel restaurantModel) {
-        this.restaurantModel = restaurantModel;
+    public void setRestaurantModel(List<Business> businesses) {
+        this.businesses = businesses;
     }
 
     @Override
     public int getCount() {
-        return restaurantModel==null?0:restaurantModel.businesses.size();
+        return businesses.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return restaurantModel.businesses.get(i);
+        return businesses.get(i);
     }
 
     @Override
@@ -57,7 +59,7 @@ public class GridViewAdapter extends BaseAdapter {
             gridView = ((LayoutInflater) Objects.requireNonNull(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))).inflate(R.layout.custom_grid_cell,null);
         }
 
-        RestaurantModel.Business business = restaurantModel.businesses.get(i);
+        Business business = businesses.get(i);
 
         ImageView ivBasicImage = gridView.findViewById(R.id.imageview);
         Picasso.with(context).load(business.image_url).into(ivBasicImage);
@@ -79,7 +81,7 @@ public class GridViewAdapter extends BaseAdapter {
         return gridView;
     }
 
-    private String buildAddress(RestaurantModel.Business.Location location){
+    private String buildAddress(Location location){
         return location.address1+" "+location.address2;
     }
 }
